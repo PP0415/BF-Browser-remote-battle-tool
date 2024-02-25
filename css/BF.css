@@ -1,0 +1,362 @@
+@charset "UTF-8";
+
+
+body {
+    background-color: white; /* 背景色 */
+    background-size: cover; /* 全画面 */
+    background-attachment: fixed; /* 固定 */
+    background-position: center center; /* 縦横中央 */
+}
+
+.Flamerow {
+    display: flex;
+    flex-direction: row;
+    width: max-content;
+    height: max-content;
+}
+
+.Flamecolumn {
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    height: max-content;
+}
+
+.CardSpace {
+    display: flex;
+    flex-direction: row;
+    width: max-content;
+    height: max-content;
+    padding: 10px;
+    min-width: 126px;
+    min-height: 176px;
+    background: white;
+}
+
+.DataCard {
+    display: flex;
+    flex-direction: row;
+    width: max-content;
+    height: max-content;
+    min-width: 126px;
+    min-height: 176px;
+}
+/*ビューボタン関連*/
+.on {
+    background: orange;
+    color: white;
+}
+
+.off {
+    background: green;
+    color: white;
+}
+/*ゾーン関連*/
+.BoxZone {
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    height: max-content;
+    padding: 10px;
+    min-width: 126px;
+    min-height: 176px;
+}
+
+    .BoxZone > img {
+        margin-top: -160px;
+    }
+
+        .BoxZone > img:first-of-type {
+            margin: 0px;
+        }
+
+.DivZone {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #999999;
+    border-radius: 10px;
+    width: max-content;
+    height: max-content;
+    font-size: 2px
+}
+
+.ButtonZone {
+    width: 100%;
+    height: 20px;
+}
+
+.TextZone {
+    width: 75%;
+    height: 20px;
+    font-size: 2px;
+}
+
+.HandleZone {
+    width: 100%;
+    height: 20px;
+    background: blue;
+    user-select: none;
+    text-align: center;
+}
+/*ライフカウンター関連*/
+.file_button {
+    border: 3px solid;
+    display: inline-block;
+    padding: 2px 1em;
+    position: relative;
+    text-align: center;
+    color: #fff;
+    background-color: #2772DB;
+    overflow: hidden;
+    -webkit-transition: .3s ease;
+    -moz-transition: .3s ease;
+    -o-transition: .3s ease;
+    transition: .3s ease;
+}
+
+    .file_button:hover {
+        background-color: #2062bf;
+    }
+
+.file_input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/*img関連*/
+img {
+    padding: 5px;
+    width: 126px;
+    height: 176px;
+}
+
+#GaugeSpace > img {
+    margin-top: -120px;
+    transform: rotate(90deg)
+}
+
+#GaugeSpace >img:nth-child(5n+1) {
+    margin-top: 0px;
+}
+
+    #GaugeSpace > img:first-of-type {
+        margin: 0px;
+    }
+
+#DropSpace > img {
+    margin-left: -60px;
+}
+
+#HandSpace > img {
+    margin-left: -60px;
+}
+
+    #HandSpace > img:first-of-type {
+        margin: 0px;
+    }
+
+#FreeZoneSpace > img {
+    margin-left: -60px;
+}
+
+    #FreeZoneSpace > img:first-of-type {
+        margin: 0px;
+    }
+/*img関連*/
+#SetArea {
+    border: 2px solid #999999;
+    border-radius: 10px;
+    background: white;
+}
+
+#Monster {
+    border: 2px solid #999999;
+    border-radius: 10px;
+    background: white;
+}
+
+#Gauge {
+    border: 2px solid #999999;
+    border-radius: 10px;
+    min-width: 176px;
+    background: white;
+}
+
+#GaugeSpace {
+    flex-direction: column;
+    max-height: 450px;
+    flex-wrap: wrap;
+    background: white;
+}
+
+#Drop {
+    border: 2px solid #999999;
+    border-radius: 10px;
+    background: white;
+}
+
+#Deck {
+    border: 2px solid #999999;
+    border-radius: 10px;
+    background: white;
+}
+
+#LostDeck {
+    border: 2px solid #999999;
+    border-radius: 10px;
+    background: white;
+}
+
+#Magic {
+    border: 2px solid #999999;
+    border-radius: 10px;
+    background: white;
+}
+
+#FlagItemArea {
+    border: 2px solid #999999;
+    border-radius: 10px;
+    background: white;
+}
+
+#Buddy {
+    border: 2px solid #999999;
+    border-radius: 10px;
+    background: white;
+}
+
+#FreeZoneCommand {
+    border: 2px solid #999999;
+    border-radius: 10px;
+    background: white;
+}
+
+#DeckCardSpace {
+    flex-wrap: wrap;
+    max-width: 1360px;
+    background: white;
+}
+
+#DeckZone {
+    border: 2px solid #999999;
+    border-radius: 10px;
+    width: max-content;
+    height: max-content;
+    background: white;
+}
+
+#LostDeckCardSpace {
+    flex-wrap: wrap;
+    max-width: 1360px;
+    background: white;
+}
+
+#DropSpace {
+    padding: 10px 10px 10px 70px;
+    flex-wrap: wrap;
+    max-width: 760px;
+    background: white;
+}
+
+#LostDeckZone {
+    border: 2px solid #999999;
+    border-radius: 10px;
+    width: max-content;
+    height: max-content;
+    background: white;
+}
+
+#Hand {
+    border: 2px solid #999999;
+    border-radius: 10px;
+    background: white;
+}
+
+#DrawZone {
+    border: 2px solid #999999;
+    border-radius: 10px;
+    background: white;
+}
+
+#FreeZone {
+    border: 2px solid #999999;
+    border-radius: 10px;
+    background: white;
+}
+
+#Life {
+    border: 2px solid #999999;
+    border-radius: 10px;
+    background: white;
+}
+
+#boxTitle {
+    position: relative;
+    font-size: 12px;
+    color: #000000;
+    z-index: 2;
+}
+
+.damageBox {
+    display: inline-block;
+    border-radius: 5px;
+    border: 1px solid #222222;
+    padding: 2px 5px;
+    background-color: transparent;
+    font-size: 60px;
+    color: #222222;
+    width: 120px;
+    height: 60px;
+    background-color: #ff8e24;
+    font-weight: bold;
+    text-align: center;
+}
+
+.btn01 {
+    display: inline-block;
+    border-radius: 5px;
+    border: 1px solid #222222;
+    padding: 2px 5px;
+    background-color: white;
+    font-size: 60px;
+    width: 60px;
+    height: 60px;
+    color: #222222;
+    cursor: pointer;
+}
+/*メニュー関連*/
+#CardMenu {
+    display: none;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: max-content;
+    height: max-content;
+    border: 1px solid #000;
+    background-color: #fff;
+}
+
+    #CardMenu li {
+        cursor: pointer;
+    }
+
+#DetaMenu {
+    display: none;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: max-content;
+    height: max-content;
+    border: 1px solid #000;
+    background-color: #fff;
+}
+
+    #DetaMenu li {
+        cursor: pointer;
+    }

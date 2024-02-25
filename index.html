@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <title>BFリモート対戦ツール</title>
+    <link rel="stylesheet" href="css/BF.css">
+    <script src="js/Sortable.js" defer></script>
+    <script src="js/BF.js" defer></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7MJLCETL3F"></script>
+    <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7MJLCETL3F');
+    </script>
+</head>
+<body oncontextmenu="return false;">
+    <div class="Flamerow" style=" background: white;">
+        BFリモート対戦ツール/制作:P.P
+        <button id="ChildWindowOpen">ディスコ用ウィンドウ表示</button>
+        <button id="Explanation">説明書</button>
+        <button id="Discord">バディファイト対戦鯖URL</button>
+        <button id="PP_URL">作者のSNSのURL(なんか不具合があればこちら、もしくはディスコードのDMに。)</button>
+    </div>
+    <div id="SetArea" class="Flamerow">
+        <!-- スリーブ -->
+        <div class="Flamecolumn">
+            PlayMat
+            <div class="file_button">
+                プレイマットを選択
+                <input class="file_input" type="file" id="PlayMatSet" accept="image/*">
+            </div>
+        </div>
+        <div id="Sleeve" class="Flamecolumn">
+            Sleeve
+            <div class="file_button">
+                スリーブを選択
+                <input class="file_input" type="file" id="SleeveSet" accept="image/*">
+            </div>
+            <div id="SleeveSpace" class="DetaCard">
+                <img src="img/BFSleeve.jpg" alt="スリーブ" width="126" height="176">
+            </div>
+        </div>
+        <!-- ロストスリーブ -->
+        <div id="LostSleeve" class="Flamecolumn">
+            LostSleeve
+            <div class="file_button">
+                ロストスリーブを選択
+                <input class="file_input" type="file" id="LostSleeveSet" accept="image/*">
+            </div>
+            <div id="LostSleeveSpace" class="DetaCard">
+                <img src="img/BFLostSleeve.jpg" alt="ロストスリーブ" width="126" height="176">
+            </div>
+        </div>
+    </div>
+    <div class="Flamerow">
+        <div class="Flamecolumn">
+            <div class="Flamerow">
+                <div id="Gauge" class="Flamecolumn">
+                    Gauge　<span id="GaugeCount">(0)</span>
+                    <button type="button" id="GaugeToFreeZone">全部フリーゾーンへ</button>
+                    <div id="GaugeSpace" class="CardSpace">
+
+                    </div>
+                </div>
+                <div id="Monster" class="Flamecolumn">
+                    <div class="Flamerow">
+                        MonsterArea
+                        <button type="button" id="CreateMonsterBox">＋</button>
+                    </div>
+                    <div id="MonsterArea" class="Flamerow">
+
+                    </div>
+                </div>
+            </div>
+            <div class="Flamerow">
+                <div id="Magic" class="Flamecolumn">
+                    <div class="Flamerow">
+                        MagicArea <span id="MagicCount">(0)</span>
+                        <button type="button" id="CreateMagicBox">＋</button>
+                    </div>
+                    <div id="MagicArea" class="Flamerow">
+
+                    </div>
+                </div>
+                <div id="FlagItemArea" class="Flamecolumn">
+                    Flag
+                    <!-- フラッグ -->
+                    <div class="file_button">
+                        フラッグを選択
+                        <input class="file_input" type="file" id="FlagSet" accept="image/*" multiple>
+                    </div>
+                    <div id="FlagSpace" class="DetaCard">
+
+                    </div>
+                    <div class="Flamerow">
+                        ItamArea <span id="ItemCount">(0)</span>
+                        <button type="button" id="CreateItemBox">＋</button>
+                    </div>
+                    <div id="ItemArea" class="Flamerow">
+
+                    </div>
+                </div>
+                <div id="Buddy" class="Flamecolumn">
+                    Buddy
+                    <div class="file_button">
+                        バディを選択
+                        <input class="file_input" type="file" id="BuddySet" accept="image/*" multiple>
+                    </div>
+                    <div id="BuddySpace" class="DetaCard">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Flamecolumn">
+            <div class="Flamerow">
+                <div id="Deck" class="Flamecolumn">
+                    Deck <span id="DeckCount">(0)</span>
+                    <button type="button" id="Deck1Draw">1ドロー</button>
+                    <button type="button" id="Deck1Gauge">1ゲージ</button>
+                    <button type="button" id="Deck1Drop">1ドロップ</button>
+                    <button type="button" id="Deck1FrontFreeZone">1表フリー</button>
+                    <button type="button" id="Deck1BackFreeZone">1裏フリー</button>
+                    <button type="button" id="DeckShuffle">シャッフル</button>
+                    <button type="button" id="DeckViewer" class="off">デッキ非閲覧中</button>
+                    <div class="file_button">
+                        デッキを選択
+                        <input class="file_input" type="file" id="DeckSet" accept="image/*" multiple>
+                    </div>
+                </div>
+                <div id="LostDeck" class="Flamecolumn">
+                    LostDeck <span id="LostDeckCount">(0)</span>
+                    <button type="button" id="LostDeck1Draw">1ドロー</button>
+                    <button type="button" id="LostDeck1Gauge">1ゲージ</button>
+                    <button type="button" id="LostDeck1Drop">1ドロップ</button>
+                    <button type="button" id="LostDeck1FrontFreeZone">1表フリー</button>
+                    <button type="button" id="LostDeck1BackFreeZone">1裏フリー</button>
+                    <button type="button" id="LostDeckShuffle">シャッフル</button>
+                    <button type="button" id="LostDeckViewer" class="off">デッキ非閲覧中</button>
+                    <div class="file_button">
+                        ロストデッキを選択
+                        <input class="file_input" type="file" id="LostDeckSet" accept="image/*" multiple>
+                    </div>
+                </div>
+                <div id="DeckZone" class="Flamecolumn" style="display: none;">
+                    <div class="Flamerow">
+                        Deck
+                    </div>
+                    <div id="DeckCardSpace" class="CardSpace">
+
+                    </div>
+                </div>
+                <div id="LostDeckZone" class="Flamecolumn" style="display: none;">
+                    <div class="Flamerow">
+                        Lost
+                    </div>
+                    <div id="LostDeckCardSpace" class="CardSpace">
+
+                    </div>
+                </div>
+            </div>
+            <div id="Drop" class="Flamecolumn">
+                Drop <span id="DropCount">(0)</span>
+                <button type="button" id="DropToFreeZone">全部フリーゾーンへ</button>
+                <div id="DropSpace" class="CardSpace">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Flamerow">
+        <div id="Life" class="Flamecolumn">
+            <div id="boxTitle">
+                <div>LifeCounter</div>
+                <a id="LifeUp" class="btn01">▲</a>
+                <input id="LifeCounter" type="text" name="num" class="damageBox">
+                <a id="LifeDown" class="btn01">▼</a>
+            </div>
+        </div>
+        <div id="Hand" class="FlameMarker">
+            Hand <span id="HandCount">(0)</span> <button type="button" class="off" id="HandViewer">カード非公開中</button>
+            <button type="button" id="HandToFreeZone">全部フリーゾーンへ</button>
+            <div id="HandSpace" class="CardSpace">
+
+            </div>
+        </div>
+        <div id="FreeZoneCommand" class="Flamecolumn">
+            FreeZoneCommand
+            <button type="button" id="FreeZoneToHand">全部手札へ</button>
+            <button type="button" id="FreeZoneToGauge">全部ゲージへ</button>
+            <button type="button" id="FreeZoneToDrop">全部ドロップへ</button>
+            <button type="button" id="FreeZoneToDeck">全部山札の下へ</button>
+            <button type="button" id="FreeZoneFront">全部表向き</button>
+            <button type="button" id="FreeZoneBack">全部裏向き</button>
+        </div>
+        <div id="FreeZone" class="FlameMarker">
+            FreeZone <button type="button" class="off" id="FreeZoneViewer">カード非公開中</button>
+            <div id="FreeZoneSpace" class="CardSpace">
+
+            </div>
+        </div>
+    </div>
+    <!--右クリックメニュー関連 -->
+    <div id="CardMenu">
+        <ul>
+            <li id="CardReverse">裏表を逆にする</li>
+            <li id="CardRest/Stand">スタンド/レスト</li>
+            <li id="CardDeckTop">デッキトップ</li>
+            <li id="CardDeckButtom">デッキボトム</li>
+        </ul>
+    </div>
+    <div id="DetaMenu">
+        <ul>
+            <li id="DetaReverse">裏表を逆にする</li>
+            <li id="DetaRest/Stand">スタンド/レスト</li>
+        </ul>
+    </div>
+</body>
+</html>
